@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class Task {
 
-    private int id;
+    private String id;
     private String description;
     private User responsible;
     private String status;
@@ -14,18 +14,19 @@ public class Task {
     public Task() {
     }
 
-    public Task(String description, User responsible, String status, Date dueDate) {
+    public Task(String id,String description, User responsible, String status, Date dueDate) {
+        this.id = id;
         this.description = description;
         this.responsible = responsible;
         this.status = status;
         this.dueDate = dueDate;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

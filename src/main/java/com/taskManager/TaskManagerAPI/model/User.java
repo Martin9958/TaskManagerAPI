@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class User {
 
-    private int id;
+    private String id;
     private String fullName;
     private String email;
     private String password;
@@ -12,17 +12,18 @@ public class User {
     public User() {
     }
 
-    public User(String fullName, String email, String password) {
+    public User(String id,String fullName, String email, String password) {
+        this.id = id;
         this.fullName = fullName;
         this.email = email;
         this.password = password;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -2,6 +2,8 @@ package com.taskManager.TaskManagerAPI.services;
 
 import com.taskManager.TaskManagerAPI.model.Task;
 import com.taskManager.TaskManagerAPI.model.User;
+
+import java.util.Date;
 import java.util.List;
 
 public interface TaskService {
@@ -13,7 +15,7 @@ public interface TaskService {
 
     public Task assignedTaskToUser(String taskId, User user);
 
-    public void removeTask();
+    public void removeTask(String taskId);
 
-    public Task updateTask(Task task);
+    public Task updateTask(String id,String description, User responsible, String status, Date dueDate);
 }
