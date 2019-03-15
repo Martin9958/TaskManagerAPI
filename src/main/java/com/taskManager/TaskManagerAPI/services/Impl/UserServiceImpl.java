@@ -15,6 +15,7 @@ public class UserServiceImpl implements UserService {
 
     HashMap<String,User> usersMap = new HashMap<>();
 
+
     @Override
     public List<User> getUsersList() {
         List<User> users; users = new ArrayList<User>(usersMap.values());
