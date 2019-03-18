@@ -12,7 +12,6 @@ import java.util.logging.Logger;
 
 
 @RestController
-@CrossOrigin(origins = "*")
 @RequestMapping(value = "/Users")
 public class UserController {
 
@@ -47,7 +46,7 @@ public class UserController {
 
     }
 
-    @GetMapping("/{userId}")
+    @PostMapping ("/{userId}")
     public ResponseEntity<?> postNewUser(@PathVariable(name = "userId") String userId, @RequestBody User user){
         try {
             userService.createUser(user.getId(),user.getFullName(),user.getEmail(),user.getPassword());
@@ -58,6 +57,18 @@ public class UserController {
         }
 
     }
+
+    @PutMapping("/update")
+    public ResponseEntity<?> updateUser(@RequestBody User user) {
+        try {
+            return new ResponseEntity<>(userService.updateUser(user.getId(),user.getFullName(),user.getEmail(),user.getPassword()), HttpStatus.ACCEPTED);
+        } catch (Exception ex) {
+
+            return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+
+
 
 
 

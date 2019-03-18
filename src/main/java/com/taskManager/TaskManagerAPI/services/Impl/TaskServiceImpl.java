@@ -4,6 +4,7 @@ import com.taskManager.TaskManagerAPI.exceptions.TaskException;
 import com.taskManager.TaskManagerAPI.model.Task;
 import com.taskManager.TaskManagerAPI.model.User;
 import com.taskManager.TaskManagerAPI.services.TaskService;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Service
 public class TaskServiceImpl implements TaskService {
 
     HashMap <String, Task> taskMap = new HashMap<>();
