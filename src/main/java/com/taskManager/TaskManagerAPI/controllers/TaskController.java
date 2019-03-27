@@ -59,7 +59,7 @@ public class TaskController {
 
     }
 
-    @PostMapping("/update")
+    @PostMapping
     public ResponseEntity<?> updateTask(@RequestBody Task task) {
         try {
             return new ResponseEntity<>(taskService.updateTask(task.getId(),task.getDescription(),task.getResponsible(),task.getStatus(),task.getDueDate()), HttpStatus.ACCEPTED);
@@ -69,7 +69,7 @@ public class TaskController {
         }
     }
 
-    @PutMapping("/assigned/{taskId}")
+    @PutMapping
     public ResponseEntity<?> assignedTaskToUser(@PathVariable(name = "taskId") String taskId,@RequestBody User user){
         try {
             return new ResponseEntity<>(taskService.assignedTaskToUser(taskId,user), HttpStatus.ACCEPTED);

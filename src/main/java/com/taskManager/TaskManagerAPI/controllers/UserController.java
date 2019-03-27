@@ -46,7 +46,7 @@ public class UserController {
 
     }
 
-    @PostMapping ("/{userId}")
+    @PostMapping
     public ResponseEntity<?> postNewUser(@PathVariable(name = "userId") String userId, @RequestBody User user){
         try {
             userService.createUser(user.getId(),user.getFullName(),user.getEmail(),user.getPassword());
@@ -58,7 +58,7 @@ public class UserController {
 
     }
 
-    @PutMapping("/update")
+    @PutMapping
     public ResponseEntity<?> updateUser(@RequestBody User user) {
         try {
             return new ResponseEntity<>(userService.updateUser(user.getId(),user.getFullName(),user.getEmail(),user.getPassword()), HttpStatus.ACCEPTED);

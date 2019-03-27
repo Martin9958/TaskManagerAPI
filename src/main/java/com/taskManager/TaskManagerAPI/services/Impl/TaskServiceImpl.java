@@ -79,6 +79,7 @@ public class TaskServiceImpl implements TaskService {
         task.setResponsible(responsible);
         task.setStatus(status);
         task.setDueDate(dueDate);
+        taskMap.replace(task.getId(),task);
         return task;
     }
 

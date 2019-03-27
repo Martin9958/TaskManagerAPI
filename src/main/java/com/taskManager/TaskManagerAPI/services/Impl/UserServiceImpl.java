@@ -52,6 +52,7 @@ public class UserServiceImpl implements UserService {
         user.setFullName(name);
         user.setEmail(email);
         user.setPassword(password);
+        usersMap.replace(user.getId(),user);
         return user;
     }
 
